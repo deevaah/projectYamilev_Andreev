@@ -19,8 +19,9 @@ def regist():
     newname = name_input.get()
     newsurname = surname_input.get()
     newid = entry_box.get()
-    cursor.execute("""INSERT INTO passport(id,name,surname,tries)
-    VALUES(?, ?, ?, ?)""",(newid,newname, newsurname))
+    tries = 0
+    cursor.execute("""INSERT INTO passport(id,name,surname, tries)
+    VALUES(?, ?, ?, ?)""",(newid,newname,newsurname, tries))
     db.commit()
 #создание первого окна
 window = Tk()
